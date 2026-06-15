@@ -25,33 +25,6 @@ export function ParentsPage({ onOpenLearn }: ParentsPageProps) {
       <div className="flex-1">
         <Container className="py-6 space-y-8">
 
-          {/* Help banner */}
-          <div className="rounded-2xl border border-green-200 bg-green-50 px-4 py-3.5 flex items-start gap-3">
-            <span className="text-xl leading-none mt-0.5" aria-hidden="true">
-              💚
-            </span>
-            <div className="flex-1 min-w-0">
-              <p className="text-sm font-semibold text-green-900 mb-0.5">{p.helpTitle}</p>
-              <p className="text-xs text-green-700 leading-relaxed mb-2">{p.helpText}</p>
-              <div className="flex flex-wrap gap-2">
-                <a
-                  href="tel:14405"
-                  className="inline-flex items-center gap-1.5 text-xs font-semibold bg-parentGreen text-white px-3 py-1.5 rounded-lg hover:bg-parentGreen/90 transition-colors"
-                >
-                  <span>{p.callNow}</span>
-                  <span>Vimukthi 14405</span>
-                </a>
-                <a
-                  href="tel:1056"
-                  className="inline-flex items-center gap-1.5 text-xs font-semibold bg-white text-green-800 border border-green-300 px-3 py-1.5 rounded-lg hover:bg-green-50 transition-colors"
-                >
-                  <span>{p.callNow}</span>
-                  <span>DISHA 1056</span>
-                </a>
-              </div>
-            </div>
-          </div>
-
           {/* Three sections */}
           {PARENT_SECTIONS.map((section) => {
             const sectionTopics = parentTopics.filter((t) => t.section === section);
