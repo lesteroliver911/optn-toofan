@@ -2,7 +2,6 @@ import { useMemo, useState } from 'react';
 import { Container } from '../components/ui/Container';
 import { KpiCard } from '../components/ui/KpiCard';
 import { Sheet } from '../components/Sheet';
-import { ReportSheet } from '../components/ReportSheet';
 import { KeralaMap } from '../components/map/KeralaMap';
 import { DistrictDetail } from '../components/map/DistrictDetail';
 import { SeverityDistribution } from '../components/map/SeverityDistribution';
@@ -23,7 +22,6 @@ export function MapPage() {
   const [selectedId, setSelectedId] = useState<string | null>(null);
   const [hoveredId, setHoveredId] = useState<string | null>(null);
   const [filter, setFilter] = useState<SeverityFilter>('all');
-  const [reportOpen, setReportOpen] = useState(false);
   const [sheetOpen, setSheetOpen] = useState(false);
 
   const filtered = useMemo(() => filterDistricts(districts, filter, ''), [filter]);
@@ -79,41 +77,6 @@ export function MapPage() {
 
   return (
     <div className={`${fontClassFor(lang)} h-full overflow-y-auto bg-canvas`}>
-      {/* Slim indigo hero */}
-      <div className="bg-indigoInk text-white">
-        <Container>
-          <div className="py-3 flex items-center justify-between gap-3">
-            <div className="min-w-0">
-              <p className="text-[11px] text-white/50 truncate">
-                {m.asOf} {stateTotals.as_of} ·{' '}
-                <a
-                  href={stateTotals.source_url}
-                  target="_blank"
-                  rel="noopener noreferrer"
-                  className="underline hover:text-white/80 transition-colors"
-                >
-                  {m.viewSource}
-                </a>
-              </p>
-            </div>
-            <button
-              onClick={() => setReportOpen(true)}
-              className="flex items-center gap-2 px-3.5 py-2 rounded-xl bg-white/10 hover:bg-white/20 border border-white/20 text-xs font-semibold transition-colors flex-shrink-0 min-h-[36px]"
-            >
-              <svg width="14" height="14" viewBox="0 0 14 14" fill="none" aria-hidden="true">
-                <path
-                  d="M7 1.5a5.5 5.5 0 100 11 5.5 5.5 0 000-11zM7 4v3.5M7 9.5h.01"
-                  stroke="white"
-                  strokeWidth="1.5"
-                  strokeLinecap="round"
-                />
-              </svg>
-              {s.report.button}
-            </button>
-          </div>
-        </Container>
-      </div>
-
       <Container className="py-4 space-y-4">
         {/* Transparency notice */}
         <div className="bg-amber-50 border border-amber-100 rounded-xl px-3 py-2">
@@ -281,7 +244,6 @@ export function MapPage() {
         )}
       </Sheet>
 
-      <ReportSheet isOpen={reportOpen} onClose={() => setReportOpen(false)} />
     </div>
   );
 }
