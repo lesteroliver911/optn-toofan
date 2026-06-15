@@ -20,7 +20,7 @@ export function HelpFab() {
       <button
         onClick={() => setOpen(true)}
         aria-label={s.helplines.fabLabel}
-        className="fixed right-4 bottom-20 md:right-6 md:bottom-6 z-[1050] w-14 h-14 rounded-full bg-indigoInk text-white shadow-float flex items-center justify-center hover:bg-indigoInk/90 active:scale-95 transition-all"
+        className="fixed right-4 bottom-20 md:right-6 md:bottom-6 z-40 w-14 h-14 rounded-full bg-indigoInk text-white shadow-float flex items-center justify-center hover:bg-indigoInk/90 active:scale-95 transition-all"
       >
         <svg width="22" height="22" viewBox="0 0 24 24" fill="none" aria-hidden="true">
           <path
