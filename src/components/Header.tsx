@@ -24,14 +24,18 @@ export function Header({ activeTab, onTabSelect, onSubmitConcern, green }: Heade
       <Container className="flex items-center justify-between h-16 gap-3">
 
         {/* Brand */}
-        <div className="flex items-center flex-shrink-0">
+        <button
+          onClick={() => onTabSelect('overview')}
+          className="flex items-center flex-shrink-0"
+          aria-label="Go to overview"
+        >
           <img
             src="/toofan-logo.png"
             alt={s.appName}
             className="h-9 md:h-10 w-auto object-contain"
             style={{ filter: 'brightness(0) invert(1)' }}
           />
-        </div>
+        </button>
 
         {/* Desktop nav tabs */}
         <nav className="hidden md:flex items-center gap-1 flex-1 justify-center" aria-label="Main navigation">
