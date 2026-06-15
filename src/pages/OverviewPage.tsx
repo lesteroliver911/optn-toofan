@@ -1,9 +1,7 @@
-import { useState } from 'react';
 import { useLang, fontClassFor } from '../i18n/useLang';
 import { useStrings } from '../i18n/strings';
 import { Container } from '../components/ui/Container';
 import { KpiCard } from '../components/ui/KpiCard';
-import { ReportSheet } from '../components/ReportSheet';
 import { DistrictBarChart } from '../components/overview/DistrictBarChart';
 import { TrendSparkline } from '../components/overview/TrendSparkline';
 import { SeizureBreakdown } from '../components/overview/SeizureBreakdown';
@@ -16,35 +14,12 @@ type OverviewPageProps = {
 };
 
 export function OverviewPage({ onNavigate }: OverviewPageProps) {
-  const [reportOpen, setReportOpen] = useState(false);
   const { lang } = useLang();
   const s = useStrings(lang);
   const ov = s.overview;
 
   return (
     <div className="h-full overflow-y-auto bg-canvas">
-      {/* Hero strip */}
-      <div className="bg-indigoInk text-white">
-        <Container>
-          <div className="py-4 flex justify-end">
-            <button
-              onClick={() => setReportOpen(true)}
-              className="flex items-center gap-2 px-4 py-2.5 rounded-xl bg-white/10 hover:bg-white/20 border border-white/20 text-sm font-semibold transition-colors"
-            >
-              <svg width="16" height="16" viewBox="0 0 16 16" fill="none" aria-hidden="true">
-                <path
-                  d="M8 2v12M2 8h12"
-                  stroke="white"
-                  strokeWidth="2"
-                  strokeLinecap="round"
-                />
-              </svg>
-              {ov.reportButton}
-            </button>
-          </div>
-        </Container>
-      </div>
-
       <Container className="py-5 space-y-5">
         {/* KPI row */}
         <div className="grid grid-cols-2 md:grid-cols-5 gap-3">
@@ -94,7 +69,6 @@ export function OverviewPage({ onNavigate }: OverviewPageProps) {
         </p>
       </Container>
 
-      <ReportSheet isOpen={reportOpen} onClose={() => setReportOpen(false)} />
     </div>
   );
 }
