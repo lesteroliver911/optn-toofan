@@ -64,7 +64,7 @@ export function Header({ activeTab, onTabSelect, onSubmitConcern, green }: Heade
           <button
             onClick={onSubmitConcern}
             aria-label={s.community.submitButton}
-            className="flex items-center gap-1.5 px-3 py-1.5 rounded-xl bg-white/10 hover:bg-white/20 border border-white/20 text-white text-xs font-semibold transition-colors"
+            className="flex items-center gap-1.5 px-3 py-1.5 rounded-xl bg-toofanRed hover:bg-red-500 border border-toofanRed text-white text-xs font-semibold transition-colors"
           >
             {/* Megaphone icon */}
             <svg width="14" height="14" viewBox="0 0 14 14" fill="none" aria-hidden="true">

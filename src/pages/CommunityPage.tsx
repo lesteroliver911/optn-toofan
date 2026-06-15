@@ -23,7 +23,6 @@ export function CommunityPage({
   reports,
   votedIds,
   toggleVote,
-  onSubmitConcern,
 }: CommunityPageProps) {
   const { lang } = useLang();
   const s = useStrings(lang);
@@ -43,27 +42,6 @@ export function CommunityPage({
 
   return (
     <div className={`${fontClassFor(lang)} h-full overflow-y-auto bg-canvas`}>
-      {/* Hero strip */}
-      <div className="bg-indigoInk text-white flex-shrink-0">
-        <Container>
-          <div className="py-4 flex items-center justify-between gap-3">
-            <div>
-              <h1 className="text-lg font-black tracking-tight">{c.title}</h1>
-              <p className="text-xs text-white/65 mt-0.5 max-w-sm">{c.subtitle}</p>
-            </div>
-            <button
-              onClick={onSubmitConcern}
-              className="flex-shrink-0 flex items-center gap-1.5 px-3.5 py-2 rounded-xl bg-white/10 hover:bg-white/20 border border-white/20 text-sm font-semibold transition-colors"
-            >
-              <svg width="13" height="13" viewBox="0 0 14 14" fill="none" aria-hidden="true">
-                <path d="M7 2v10M2 7h10" stroke="white" strokeWidth="2" strokeLinecap="round" />
-              </svg>
-              {c.submitButton}
-            </button>
-          </div>
-        </Container>
-      </div>
-
       <Container className="py-4 space-y-4">
         <ReportFilters
           filter={filter}
