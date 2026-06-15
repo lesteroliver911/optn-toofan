@@ -1,0 +1,14 @@
+import React from 'react';
+import ReactDOM from 'react-dom/client';
+import 'leaflet/dist/leaflet.css';
+import './index.css';
+import { App } from './App';
+import { LanguageProvider } from './i18n/LanguageProvider';
+
+ReactDOM.createRoot(document.getElementById('root') as HTMLElement).render(
+  <React.StrictMode>
+    <LanguageProvider>
+      <App />
+    </LanguageProvider>
+  </React.StrictMode>,
+);

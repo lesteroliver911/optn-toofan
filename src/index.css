@@ -1,0 +1,149 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+:root {
+  color-scheme: light;
+}
+
+html,
+body,
+#root {
+  height: 100%;
+}
+
+body {
+  margin: 0;
+  background: #f8f9fc;
+  font-family: 'Inter', system-ui, sans-serif;
+  -webkit-font-smoothing: antialiased;
+  text-rendering: optimizeLegibility;
+}
+
+/* Hide scrollbars inside the phone shell while keeping scroll behaviour. */
+.no-scrollbar::-webkit-scrollbar {
+  display: none;
+}
+.no-scrollbar {
+  -ms-overflow-style: none;
+  scrollbar-width: none;
+}
+
+@keyframes sheet-up {
+  from {
+    transform: translateY(100%);
+  }
+  to {
+    transform: translateY(0);
+  }
+}
+.animate-sheet-up {
+  animation: sheet-up 0.28s cubic-bezier(0.16, 1, 0.3, 1);
+}
+
+@keyframes fade-in {
+  from {
+    opacity: 0;
+  }
+  to {
+    opacity: 1;
+  }
+}
+.animate-fade-in {
+  animation: fade-in 0.2s ease-out;
+}
+
+@keyframes msg-in {
+  from {
+    opacity: 0;
+    transform: translateY(6px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+.animate-msg-in {
+  animation: msg-in 0.22s ease-out;
+}
+
+@keyframes blink {
+  0%,
+  60%,
+  100% {
+    opacity: 0.25;
+  }
+  30% {
+    opacity: 1;
+  }
+}
+.typing-dot {
+  animation: blink 1.2s infinite;
+}
+
+/* Leaflet container — clean canvas background (no world tiles). */
+.leaflet-container {
+  font-family: 'Inter', system-ui, sans-serif;
+  background: #EEF2F8;
+}
+.leaflet-control-attribution {
+  font-size: 9px;
+  background: transparent !important;
+  color: #9AA1B4;
+}
+
+/* Animated pulse ring overlaid on selected/top map marker */
+.toofan-pulse-ring {
+  display: block;
+  width: 40px;
+  height: 40px;
+  border-radius: 50%;
+  border: 3px solid var(--ring, #E4453A);
+  position: absolute;
+  top: 0;
+  left: 0;
+  animation: pulse-ring 1.8s ease-out infinite;
+  pointer-events: none;
+}
+/* Hide Leaflet's default white square for our divIcon */
+.leaflet-marker-icon.leaflet-zoom-animated {
+  background: transparent !important;
+  border: none !important;
+}
+
+/* Toofan popup chrome — surface card style */
+.toofan-popup .leaflet-popup-content-wrapper {
+  background: #ffffff;
+  border-radius: 16px;
+  box-shadow: 0 8px 28px rgba(18, 24, 58, 0.18);
+  padding: 0;
+  border: 1px solid rgba(18, 24, 58, 0.08);
+}
+.toofan-popup .leaflet-popup-content {
+  margin: 0;
+  line-height: 1;
+}
+.toofan-popup .leaflet-popup-tip-container {
+  margin-top: -1px;
+}
+.toofan-popup .leaflet-popup-tip {
+  background: #ffffff;
+  box-shadow: none;
+}
+
+/* Custom district tooltip */
+.leaflet-tooltip-toofan {
+  background: #12183A;
+  color: #fff;
+  border: none;
+  border-radius: 8px;
+  padding: 4px 10px;
+  font-size: 12px;
+  font-weight: 500;
+  box-shadow: 0 4px 12px rgba(18, 24, 58, 0.18);
+  white-space: nowrap;
+  pointer-events: none;
+}
+.leaflet-tooltip-toofan::before {
+  border-top-color: #12183A;
+}
