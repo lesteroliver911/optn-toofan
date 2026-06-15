@@ -7,20 +7,21 @@ import type { TabId } from '../types';
 type HeaderProps = {
   activeTab: TabId;
   onTabSelect: (tab: TabId) => void;
-  /** Render accent colour for Parents / parent-copilot view. */
+  onSubmitConcern: () => void;
+  /** Render accent colour for Parents view. */
   green?: boolean;
 };
 
 const NAV_TABS: TabId[] = ['overview', 'map', 'news', 'learn', 'parents', 'community'];
 
-export function Header({ activeTab, onTabSelect, green }: HeaderProps) {
+export function Header({ activeTab, onTabSelect, onSubmitConcern, green }: HeaderProps) {
   const { lang } = useLang();
   const s = useStrings(lang);
   const bg = green ? 'bg-parentGreen' : 'bg-indigoInk';
 
   return (
     <header className={`${bg} ${fontClassFor(lang)} sticky top-0 z-[1100] w-full`}>
-      <Container className="flex items-center justify-between h-16">
+      <Container className="flex items-center justify-between h-16 gap-3">
 
         {/* Brand */}
         <div className="flex items-center flex-shrink-0">
@@ -32,11 +33,10 @@ export function Header({ activeTab, onTabSelect, green }: HeaderProps) {
           />
         </div>
 
-        {/* Desktop nav tabs — hidden on mobile */}
-        <nav className="hidden md:flex items-center gap-1" aria-label="Main navigation">
+        {/* Desktop nav tabs */}
+        <nav className="hidden md:flex items-center gap-1 flex-1 justify-center" aria-label="Main navigation">
           {NAV_TABS.map((tab) => {
             const isActive = tab === activeTab;
-            const isParents = tab === 'parents';
             return (
               <button
                 key={tab}
@@ -45,9 +45,7 @@ export function Header({ activeTab, onTabSelect, green }: HeaderProps) {
                 className={`px-4 py-2 rounded-full text-sm font-semibold transition-colors ${
                   isActive
                     ? 'bg-white text-indigoInk'
-                    : isParents && green
-                      ? 'text-white/80 hover:text-white hover:bg-white/15'
-                      : 'text-white/75 hover:text-white hover:bg-white/15'
+                    : 'text-white/75 hover:text-white hover:bg-white/15'
                 }`}
               >
                 {s.tabs[tab]}
@@ -56,10 +54,36 @@ export function Header({ activeTab, onTabSelect, green }: HeaderProps) {
           })}
         </nav>
 
-        {/* Language switcher */}
-        <LanguageSwitcher />
-      </Container>
+        {/* Right cluster: Submit CTA + language dropdown */}
+        <div className="flex items-center gap-2 flex-shrink-0">
+          {/* Submit a concern CTA */}
+          <button
+            onClick={onSubmitConcern}
+            aria-label={s.community.submitButton}
+            className="flex items-center gap-1.5 px-3 py-1.5 rounded-xl bg-white/10 hover:bg-white/20 border border-white/20 text-white text-xs font-semibold transition-colors"
+          >
+            {/* Megaphone icon */}
+            <svg width="14" height="14" viewBox="0 0 14 14" fill="none" aria-hidden="true">
+              <path
+                d="M2 5.5h1.5L9 2.5v9L3.5 8.5H2a1 1 0 01-1-1v-1a1 1 0 011-1z"
+                stroke="white"
+                strokeWidth="1.3"
+                strokeLinejoin="round"
+              />
+              <path
+                d="M3.5 8.5V11"
+                stroke="white"
+                strokeWidth="1.3"
+                strokeLinecap="round"
+              />
+            </svg>
+            {/* Label — visible on md+ only */}
+            <span className="hidden md:inline">{s.community.submitButton}</span>
+          </button>
 
+          <LanguageSwitcher />
+        </div>
+      </Container>
     </header>
   );
 }

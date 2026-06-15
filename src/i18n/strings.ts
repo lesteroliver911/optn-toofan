@@ -159,6 +159,17 @@ export type Strings = {
     emergencyLabel: string;
     learnCtaText: string;
   };
+  helplines: {
+    fabLabel: string;
+    title: string;
+    subtitle: string;
+    reportingSection: string;
+    supportSection: string;
+    emergencySection: string;
+    vimukthi: string;
+    disha: string;
+    emergency: string;
+  };
 };
 
 export const strings: Record<Lang, Strings> = {
@@ -325,6 +336,17 @@ export const strings: Record<Lang, Strings> = {
       learnCtaText:
         'The Learn library has calm, factual guides on warning signs, starting a conversation, and finding professional support in Kerala.',
     },
+    helplines: {
+      fabLabel: 'Help and helplines',
+      title: 'Helplines',
+      subtitle: 'All numbers are free to call. For emergencies call 112.',
+      reportingSection: 'Report to Operation Toofan',
+      supportSection: 'De-addiction and counselling',
+      emergencySection: 'Emergency',
+      vimukthi: 'Vimukthi de-addiction',
+      disha: 'DISHA mental health',
+      emergency: 'Emergency services',
+    },
   },
   ml: {
     appName: 'തൂഫാൻ കമ്പാനിയൻ',
@@ -489,6 +511,17 @@ export const strings: Record<Lang, Strings> = {
       learnCtaText:
         'ലേൺ ലൈബ്രറിയിൽ മുന്നറിയിപ്പ് ലക്ഷണങ്ങൾ, സംഭാഷണം ആരംഭിക്കൽ, കേരളത്തിൽ പ്രൊഫഷണൽ സഹായം ഇവ കണ്ടെത്തുന്നതിനുള്ള ശാന്തവും വസ്തുനിഷ്ഠവുമായ ഗൈഡുകൾ ഉണ്ട്.',
     },
+    helplines: {
+      fabLabel: 'സഹായ നമ്പറുകൾ',
+      title: 'ഹെൽപ്‌ലൈനുകൾ',
+      subtitle: 'എല്ലാ നമ്പറുകളിലേക്കും വിളിക്കാൻ നിരക്കില്ല. അടിയന്തരഘട്ടത്തിൽ 112 വിളിക്കുക.',
+      reportingSection: 'ഓപ്പറേഷൻ തൂഫാനിൽ റിപ്പോർട്ട് ചെയ്യുക',
+      supportSection: 'ഡീ-അഡിക്ഷൻ, കൗൺസലിംഗ്',
+      emergencySection: 'അടിയന്തരം',
+      vimukthi: 'വിമുക്തി ഡീ-അഡിക്ഷൻ',
+      disha: 'ദിശ മാനസികാരോഗ്യം',
+      emergency: 'അടിയന്തര സേവനങ്ങൾ',
+    },
   },
   hi: {
     appName: 'तूफ़ान कम्पैनियन',
@@ -652,6 +685,17 @@ export const strings: Record<Lang, Strings> = {
       emergencyLabel: 'आपातकालीन सेवाएं',
       learnCtaText:
         'Learn लाइब्रेरी में चेतावनी के संकेत, बातचीत शुरू करने और केरल में पेशेवर सहायता खोजने के लिए शांत, तथ्यात्मक गाइड हैं।',
+    },
+    helplines: {
+      fabLabel: 'सहायता नंबर',
+      title: 'हेल्पलाइन',
+      subtitle: 'सभी नंबरों पर कॉल मुफ्त है। आपातकाल में 112 डायल करें।',
+      reportingSection: 'ऑपरेशन तूफ़ान को रिपोर्ट करें',
+      supportSection: 'नशामुक्ति और परामर्श',
+      emergencySection: 'आपातकाल',
+      vimukthi: 'विमुक्ति नशामुक्ति',
+      disha: 'DISHA मानसिक स्वास्थ्य',
+      emergency: 'आपातकालीन सेवाएं',
     },
   },
 };

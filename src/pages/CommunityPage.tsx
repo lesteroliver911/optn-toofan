@@ -6,27 +6,36 @@ import { ReportMap } from '../components/community/ReportMap';
 import { ReportFilters } from '../components/community/ReportFilters';
 import { ReportCard } from '../components/community/ReportCard';
 import { ReportDetail } from '../components/community/ReportDetail';
-import { SubmitReportSheet } from '../components/community/SubmitReportSheet';
 import { useLang, fontClassFor } from '../i18n/useLang';
 import { useStrings } from '../i18n/strings';
-import { useCommunityReports } from '../lib/useCommunityReports';
 import { filterReports, sortReports } from '../lib/reports';
 import type { ReportCategoryFilter, ReportSort } from '../lib/reports';
+import type { CommunityReport, ReportCategory } from '../types';
+
+type CommunityPageProps = {
+  reports: CommunityReport[];
+  votedIds: Set<string>;
+  addReport: (input: { category: ReportCategory; pincode: string; description: string }) => void;
+  toggleVote: (id: string) => void;
+  onSubmitConcern: () => void;
+};
 
 type PageView = 'list' | 'map';
 
-export function CommunityPage() {
+export function CommunityPage({
+  reports,
+  votedIds,
+  toggleVote,
+  onSubmitConcern,
+}: CommunityPageProps) {
   const { lang } = useLang();
   const s = useStrings(lang);
   const c = s.community;
-
-  const { reports, votedIds, addReport, toggleVote } = useCommunityReports();
 
   const [view, setView] = useState<PageView>('list');
   const [filter, setFilter] = useState<ReportCategoryFilter>('all');
   const [sort, setSort] = useState<ReportSort>('top');
   const [selectedId, setSelectedId] = useState<string | null>(null);
-  const [submitOpen, setSubmitOpen] = useState(false);
   const [officialOpen, setOfficialOpen] = useState(false);
 
   const displayed = useMemo(
@@ -51,7 +60,7 @@ export function CommunityPage() {
               <p className="text-xs text-white/65 mt-0.5 max-w-sm">{c.subtitle}</p>
             </div>
             <button
-              onClick={() => setSubmitOpen(true)}
+              onClick={onSubmitConcern}
               className="flex-shrink-0 flex items-center gap-1.5 px-3.5 py-2 rounded-xl bg-white/10 hover:bg-white/20 border border-white/20 text-sm font-semibold transition-colors"
             >
               <svg width="13" height="13" viewBox="0 0 14 14" fill="none" aria-hidden="true">
@@ -101,9 +110,7 @@ export function CommunityPage() {
                 key={v}
                 onClick={() => setView(v)}
                 className={`flex items-center gap-1.5 px-5 py-2 transition-colors ${
-                  view === v
-                    ? 'bg-indigoInk text-white'
-                    : 'text-gray-500 hover:text-indigoInk'
+                  view === v ? 'bg-indigoInk text-white' : 'text-gray-500 hover:text-indigoInk'
                 }`}
               >
                 {v === 'list' ? (
@@ -132,7 +139,7 @@ export function CommunityPage() {
           </div>
         </div>
 
-        {/* ── LIST VIEW ── */}
+        {/* LIST VIEW */}
         {view === 'list' && (
           <>
             <ReportFilters
@@ -191,7 +198,7 @@ export function CommunityPage() {
           </>
         )}
 
-        {/* ── MAP VIEW ── */}
+        {/* MAP VIEW */}
         {view === 'map' && (
           <>
             <ReportFilters
@@ -218,7 +225,7 @@ export function CommunityPage() {
                 lang={lang}
               />
 
-              {/* Category legend — bottom left overlay */}
+              {/* Category legend */}
               <div className="absolute bottom-3 left-3 z-[1000] bg-white/92 backdrop-blur-sm rounded-xl px-3 py-2 shadow-card text-[10px] border border-white/60 space-y-1">
                 {([
                   { key: 'drug-use', label: c.drugUse, color: '#E4453A' },
@@ -239,7 +246,7 @@ export function CommunityPage() {
         )}
       </Container>
 
-      {/* Detail sheet — opened from list card tap or popup "View details" */}
+      {/* Detail sheet */}
       <Sheet
         isOpen={!!selected}
         onClose={() => setSelectedId(null)}
@@ -253,16 +260,6 @@ export function CommunityPage() {
           />
         )}
       </Sheet>
-
-      {/* Submit sheet */}
-      <SubmitReportSheet
-        isOpen={submitOpen}
-        onClose={() => setSubmitOpen(false)}
-        onSubmit={(input) => {
-          addReport(input);
-          setSubmitOpen(false);
-        }}
-      />
 
       {/* Official channels sheet */}
       <ReportSheet isOpen={officialOpen} onClose={() => setOfficialOpen(false)} />
