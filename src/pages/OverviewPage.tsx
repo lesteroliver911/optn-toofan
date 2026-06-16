@@ -6,6 +6,7 @@ import { DistrictBarChart } from '../components/overview/DistrictBarChart';
 import { TrendSparkline } from '../components/overview/TrendSparkline';
 import { SeizureBreakdown } from '../components/overview/SeizureBreakdown';
 import { OperationFacts } from '../components/overview/OperationFacts';
+import { CommandIntel } from '../components/overview/CommandIntel';
 import { LatestCoverage } from '../components/overview/LatestCoverage';
 import { stateTotals, formatKg, formatNumber, districtsActive } from '../lib/overview';
 import type { TabId } from '../types';
@@ -53,6 +54,9 @@ export function OverviewPage({ onNavigate }: OverviewPageProps) {
 
         {/* Operation at a glance — verified operational facts */}
         <OperationFacts />
+
+        {/* Live command intelligence */}
+        <CommandIntel />
 
         {/* Main two-column row */}
         <div className="grid grid-cols-1 md:grid-cols-2 gap-5 items-start">

@@ -185,6 +185,31 @@ export type Strings = {
     disha: string;
     emergency: string;
   };
+  intel: {
+    sectionTitle: string;
+    asOfToday: string;
+    raidsToday: string;
+    arrestsToday: string;
+    kingpinsHeld: string;
+    worseningTitle: string;
+    weekOnWeek: string;
+    awarenessTitle: string;
+    schoolsReached: string;
+    programmesRun: string;
+    districtsCovered: string;
+    routesTitle: string;
+    viaRail: string;
+    viaAir: string;
+    viaRoad: string;
+    mdma: string;
+    cannabis: string;
+    origin: string;
+    entry: string;
+    sentimentTitle: string;
+    supportive: string;
+    concerned: string;
+    critical: string;
+  };
 };
 
 export const strings: Record<Lang, Strings> = {
@@ -378,6 +403,31 @@ export const strings: Record<Lang, Strings> = {
       disha: 'DISHA mental health',
       emergency: 'Emergency services',
     },
+    intel: {
+      sectionTitle: 'Live command intelligence',
+      asOfToday: 'As of today',
+      raidsToday: 'Raids today',
+      arrestsToday: 'Arrests today',
+      kingpinsHeld: 'Kingpins held',
+      worseningTitle: 'Worsening district',
+      weekOnWeek: 'week-on-week',
+      awarenessTitle: 'Youth awareness coverage',
+      schoolsReached: 'Schools reached',
+      programmesRun: 'Programmes run',
+      districtsCovered: 'Districts covered',
+      routesTitle: 'Emerging trafficking routes',
+      viaRail: 'Rail',
+      viaAir: 'Air',
+      viaRoad: 'Road',
+      mdma: 'MDMA',
+      cannabis: 'Cannabis',
+      origin: 'Origin',
+      entry: 'Entry point',
+      sentimentTitle: 'Public sentiment',
+      supportive: 'Supportive',
+      concerned: 'Concerned',
+      critical: 'Critical',
+    },
   },
   ml: {
     appName: 'തൂഫാൻ കമ്പാനിയൻ',
@@ -569,6 +619,31 @@ export const strings: Record<Lang, Strings> = {
       disha: 'ദിശ മാനസികാരോഗ്യം',
       emergency: 'അടിയന്തര സേവനങ്ങൾ',
     },
+    intel: {
+      sectionTitle: 'തത്സമയ കമാൻഡ് ഇന്റലിജൻസ്',
+      asOfToday: 'ഇന്ന് വരെ',
+      raidsToday: 'ഇന്നത്തെ റെയ്ഡുകൾ',
+      arrestsToday: 'ഇന്നത്തെ അറസ്റ്റുകൾ',
+      kingpinsHeld: 'മുഖ്യ ആരോപിതർ',
+      worseningTitle: 'വഷളായ ജില്ല',
+      weekOnWeek: 'ആഴ്ചതോറും',
+      awarenessTitle: 'യുവജന ബോധവൽക്കരണ കവറേജ്',
+      schoolsReached: 'സ്കൂളുകൾ',
+      programmesRun: 'പരിപാടികൾ',
+      districtsCovered: 'ജില്ലകൾ',
+      routesTitle: 'ഉയർന്നുവരുന്ന കള്ളക്കടത്ത് റൂട്ടുകൾ',
+      viaRail: 'ട്രെയിൻ',
+      viaAir: 'വിമാനം',
+      viaRoad: 'റോഡ്',
+      mdma: 'MDMA',
+      cannabis: 'കഞ്ചാവ്',
+      origin: 'ഉറവിടം',
+      entry: 'പ്രവേശന കേന്ദ്രം',
+      sentimentTitle: 'പൊതു അഭിപ്രായം',
+      supportive: 'അനുകൂലം',
+      concerned: 'ആശങ്ക',
+      critical: 'വിമർശനം',
+    },
   },
   hi: {
     appName: 'तूफ़ान कम्पैनियन',
@@ -759,6 +834,31 @@ export const strings: Record<Lang, Strings> = {
       vimukthi: 'विमुक्ति नशामुक्ति',
       disha: 'DISHA मानसिक स्वास्थ्य',
       emergency: 'आपातकालीन सेवाएं',
+    },
+    intel: {
+      sectionTitle: 'लाइव कमांड इंटेलिजेंस',
+      asOfToday: 'आज तक',
+      raidsToday: 'आज के छापे',
+      arrestsToday: 'आज की गिरफ्तारियां',
+      kingpinsHeld: 'मुख्य आरोपी पकड़े',
+      worseningTitle: 'बिगड़ता जिला',
+      weekOnWeek: 'सप्ताह-दर-सप्ताह',
+      awarenessTitle: 'युवा जागरूकता कवरेज',
+      schoolsReached: 'स्कूल',
+      programmesRun: 'कार्यक्रम',
+      districtsCovered: 'जिले',
+      routesTitle: 'उभरते तस्करी मार्ग',
+      viaRail: 'रेल',
+      viaAir: 'हवाई',
+      viaRoad: 'सड़क',
+      mdma: 'MDMA',
+      cannabis: 'कैनाबिस',
+      origin: 'स्रोत',
+      entry: 'प्रवेश बिंदु',
+      sentimentTitle: 'जन भावना',
+      supportive: 'समर्थन',
+      concerned: 'चिंतित',
+      critical: 'आलोचनात्मक',
     },
   },
 };
