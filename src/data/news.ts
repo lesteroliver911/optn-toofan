@@ -25,6 +25,30 @@ export const newsItems: NewsItem[] = [
 
   // ── ENFORCEMENT ────────────────────────────────────────────────────────────
   {
+    id: 'hindu-rural-60kg-ganja',
+    headline: 'Operation Toofan: rural police seize 60 kg of suspected ganja in two weeks',
+    ai_summary:
+      'Ernakulam Rural police registered 60 NDPS cases and arrested 73 people in under two weeks, seizing nearly 60 kg ganja, 780 g hashish oil and 5 g MDMA; the largest single haul was 34 kg of ganja from West Bengal natives.',
+    source_name: 'The Hindu',
+    source_url:
+      'https://www.thehindu.com/news/national/kerala/operation-toofan-rural-police-seize-60-kg-of-suspected-ganja-in-two-weeks/article71097876.ece',
+    published_at: '2026-06-13T19:34:00+05:30',
+    is_toofan_relevant: true,
+    category: 'enforcement',
+  },
+  {
+    id: 'toi-perumbavoor-heroin',
+    headline: 'Operation Toofan: police seize 60 vials of heroin in Perumbavoor raids, 12 in custody',
+    ai_summary:
+      'A sniffer-dog-assisted rural police drive around Perumbavoor town recovered 60 vials of heroin and took 12 people into custody, part of a special investigation tracing each seizure back to its source.',
+    source_name: 'Times of India',
+    source_url:
+      'https://timesofindia.indiatimes.com/city/kochi/operation-toofan-police-seize-60-vials-of-heroin-during-raids-in-perumbavoor-12-in-custody/articleshow/131725109.cms',
+    published_at: '2026-06-14T09:30:00+05:30',
+    is_toofan_relevant: true,
+    category: 'enforcement',
+  },
+  {
     id: 'kk-192-wednesday',
     headline: 'MDMA and cannabis sale remain widespread; 192 arrested on Wednesday alone',
     ai_summary:
@@ -177,6 +201,18 @@ export const newsItems: NewsItem[] = [
   },
 
   // ── EXPLAINER / ANALYSIS ───────────────────────────────────────────────────
+  {
+    id: 'national-herald-allout-war',
+    headline: "Kerala's all-out war: assessing Operation Toofan's mission-mode response to drugs",
+    ai_summary:
+      "National Herald argues Kerala's narcotics challenge is now a social crisis, noting Toofan moved from 137 arrests on day one to 368 within three days, and that 2025 saw nearly 19,000 offenders caught in anti-narcotics drives.",
+    source_name: 'National Herald',
+    source_url:
+      'https://www.nationalheraldindia.com/opinion/operation-toofan-kerala-war-against-drugs',
+    published_at: '2026-06-13T09:00:00+05:30',
+    is_toofan_relevant: true,
+    category: 'explainer',
+  },
   {
     id: 'biospectrum-analysis',
     headline:

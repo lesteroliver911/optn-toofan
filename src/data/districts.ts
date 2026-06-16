@@ -19,7 +19,7 @@ const ERNAKULAM_SOURCE =
 const KOZHIKODE_SOURCE =
   'https://www.manoramanews.com/crime/kuttapathram/2026/06/04/kozhikode-drug-bust-tufan-hunt-arrests.html';
 
-const AS_OF = '2026-06-10';
+const AS_OF = '2026-06-11';
 
 function severityFor(caseCount: number): Severity {
   if (caseCount >= 150) return 'high';

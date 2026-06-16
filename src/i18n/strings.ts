@@ -55,8 +55,23 @@ export type Strings = {
     viewFullMap: string;
     momentumTitle: string;
     illustrative: string;
+    reportedFigures: string;
     seizuresTitle: string;
     beedis: string;
+    byWeight: string;
+    pieces: string;
+    seizuresNote: string;
+    factsTitle: string;
+    launched: string;
+    dayWord: string;
+    subdivisionsCovered: string;
+    squadsEach: string;
+    jurisdiction: string;
+    statesUts: string;
+    foreignHeld: string;
+    delhiBengaluru: string;
+    valueSeized: string;
+    firstThreeDays: string;
     pillarsTitle: string;
     latestCoverage: string;
     viewAllNews: string;
@@ -191,15 +206,31 @@ export const strings: Record<Lang, Strings> = {
       cannabisSeized: 'Cannabis seized',
       casesByDistrict: 'Cases by district',
       viewFullMap: 'View full map',
-      momentumTitle: 'Weekly momentum',
+      momentumTitle: 'Case momentum',
       illustrative: 'Illustrative trend',
+      reportedFigures: 'Reported figures',
       seizuresTitle: 'Seizures breakdown',
       beedis: 'Cannabis beedis',
+      byWeight: 'by weight',
+      pieces: 'pcs',
+      seizuresNote:
+        'District raids have also recovered hashish oil and heroin; no statewide cumulative total has been published for these.',
+      factsTitle: 'Operation at a glance',
+      launched: 'Launched',
+      dayWord: 'Day',
+      subdivisionsCovered: 'Subdivisions',
+      squadsEach: 'squads each',
+      jurisdiction: 'Jurisdiction',
+      statesUts: 'states + UTs',
+      foreignHeld: 'Foreign kingpins held',
+      delhiBengaluru: 'Delhi & Bengaluru',
+      valueSeized: 'Value seized',
+      firstThreeDays: 'first 3 days',
       pillarsTitle: 'Four pillars of the operation',
       latestCoverage: 'Latest coverage',
       viewAllNews: 'View all news',
       transparency:
-        'All figures are officially reported, district-level data only. Street-level locations are never shown. Source: Kerala Kaumudi, 10 Jun 2026.',
+        'All figures are officially reported, district-level data only. Street-level locations are never shown. Source: Kerala Kaumudi, 11 Jun 2026.',
     },
     community: {
       title: 'Community Board',
@@ -366,15 +397,31 @@ export const strings: Record<Lang, Strings> = {
       cannabisSeized: 'കഞ്ചാവ് പിടിച്ചെടുത്തു',
       casesByDistrict: 'ജില്ലാ അനുസരിച്ച് കേസുകൾ',
       viewFullMap: 'പൂർണ മാപ്പ് കാണുക',
-      momentumTitle: 'വാരാന്ത്യ ഗതി',
+      momentumTitle: 'കേസുകളുടെ ഗതി',
       illustrative: 'ദൃഷ്ടാന്ത ട്രെൻഡ്',
+      reportedFigures: 'റിപ്പോർട്ട് ചെയ്ത കണക്കുകൾ',
       seizuresTitle: 'പിടിച്ചെടുക്കൽ വിശദാംശം',
       beedis: 'കഞ്ചാവ് ബീഡികൾ',
+      byWeight: 'തൂക്കം അനുസരിച്ച്',
+      pieces: 'എണ്ണം',
+      seizuresNote:
+        'ജില്ലാ റെയ്ഡുകളിൽ ഹാഷിഷ് ഓയിലും ഹെറോയിനും പിടിച്ചെടുത്തിട്ടുണ്ട്; ഇവയ്ക്ക് സംസ്ഥാനതല ആകെ കണക്ക് പ്രസിദ്ധീകരിച്ചിട്ടില്ല.',
+      factsTitle: 'ഓപ്പറേഷൻ ഒറ്റനോട്ടത്തിൽ',
+      launched: 'ആരംഭിച്ചത്',
+      dayWord: 'ദിവസം',
+      subdivisionsCovered: 'ഉപവിഭാഗങ്ങൾ',
+      squadsEach: 'സ്ക്വാഡുകൾ വീതം',
+      jurisdiction: 'അധികാരപരിധി',
+      statesUts: 'സംസ്ഥാനങ്ങൾ + കേന്ദ്രഭരണ പ്രദേശങ്ങൾ',
+      foreignHeld: 'വിദേശ മുഖ്യപ്രതികൾ',
+      delhiBengaluru: 'ഡൽഹി, ബെംഗളൂരു',
+      valueSeized: 'പിടിച്ചെടുത്ത മൂല്യം',
+      firstThreeDays: 'ആദ്യ 3 ദിവസം',
       pillarsTitle: 'ഓപ്പറേഷന്‍റെ നാല് സ്തംഭങ്ങൾ',
       latestCoverage: 'പുതിയ വാർത്തകൾ',
       viewAllNews: 'എല്ലാ വാർത്തകളും കാണുക',
       transparency:
-        'എല്ലാ കണക്കുകളും ഔദ്യോഗികമായി റിപ്പോർട്ട് ചെയ്ത ജില്ലാ തല ഡാറ്റ മാത്രം. തെരുവ് തല ലൊക്കേഷനുകൾ ഒരിക്കലും കാണിക്കില്ല. ഉറവിടം: കേരള കൗമുദി, 10 ജൂൺ 2026.',
+        'എല്ലാ കണക്കുകളും ഔദ്യോഗികമായി റിപ്പോർട്ട് ചെയ്ത ജില്ലാ തല ഡാറ്റ മാത്രം. തെരുവ് തല ലൊക്കേഷനുകൾ ഒരിക്കലും കാണിക്കില്ല. ഉറവിടം: കേരള കൗമുദി, 11 ജൂൺ 2026.',
     },
     community: {
       title: 'സമൂഹ ബോർഡ്',
@@ -541,15 +588,31 @@ export const strings: Record<Lang, Strings> = {
       cannabisSeized: 'कैनाबिस जब्त',
       casesByDistrict: 'जिले के अनुसार मामले',
       viewFullMap: 'पूरा नक्शा देखें',
-      momentumTitle: 'साप्ताहिक गति',
+      momentumTitle: 'मामलों की गति',
       illustrative: 'दृष्टांत प्रवृत्ति',
+      reportedFigures: 'रिपोर्ट किए गए आंकड़े',
       seizuresTitle: 'जब्ती विवरण',
       beedis: 'कैनाबिस बीड़ी',
+      byWeight: 'वज़न के अनुसार',
+      pieces: 'नग',
+      seizuresNote:
+        'जिला छापों में हशीश ऑयल और हेरोइन भी बरामद हुई है; इनका राज्यव्यापी कुल आंकड़ा प्रकाशित नहीं किया गया है।',
+      factsTitle: 'ऑपरेशन एक नज़र में',
+      launched: 'शुरू हुआ',
+      dayWord: 'दिन',
+      subdivisionsCovered: 'उप-मंडल',
+      squadsEach: 'दस्ते प्रत्येक',
+      jurisdiction: 'अधिकार क्षेत्र',
+      statesUts: 'राज्य + केंद्र शासित प्रदेश',
+      foreignHeld: 'विदेशी सरगना पकड़े',
+      delhiBengaluru: 'दिल्ली और बेंगलुरु',
+      valueSeized: 'जब्त मूल्य',
+      firstThreeDays: 'पहले 3 दिन',
       pillarsTitle: 'ऑपरेशन के चार स्तंभ',
       latestCoverage: 'ताज़ा कवरेज',
       viewAllNews: 'सभी समाचार देखें',
       transparency:
-        'सभी आंकड़े आधिकारिक रूप से रिपोर्ट किए गए जिला-स्तरीय डेटा हैं। सड़क-स्तरीय स्थान कभी नहीं दिखाए जाते। स्रोत: केरल कौमुदी, 10 जून 2026।',
+        'सभी आंकड़े आधिकारिक रूप से रिपोर्ट किए गए जिला-स्तरीय डेटा हैं। सड़क-स्तरीय स्थान कभी नहीं दिखाए जाते। स्रोत: केरल कौमुदी, 11 जून 2026।',
     },
     community: {
       title: 'सामुदायिक बोर्ड',

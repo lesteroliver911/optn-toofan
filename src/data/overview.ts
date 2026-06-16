@@ -1,20 +1,47 @@
 import type { CampaignPillar } from '../types';
 
 /**
- * Illustrative weekly cumulative case totals for the sparkline.
- * These are directionally consistent: the final value equals the verified
- * statewide cumulative (1,768). All intermediate points are illustrative
- * and labelled as such in the UI. Do NOT cite these as official figures.
- * Source for endpoint: Kerala Kaumudi, 10 Jun 2026.
+ * Verified cumulative registered-case checkpoints, each from public reporting.
+ * Every value is a real reported cumulative figure on the given date:
+ *   Jun 2  104  - New Indian Express (day-1, 24 hours)
+ *   Jun 4  340  - Kerala Kaumudi / Times of India (day-3 statewide)
+ *   Jun 5  728  - The Hindu (first three days)
+ *   Jun 10 1442 - Kerala Kaumudi (first week)
+ *   Jun 11 1768 - Kerala Kaumudi (cumulative to date)
+ * These are reported figures, not illustrative.
  */
-export const weeklyTrend: { label: string; value: number }[] = [
-  { label: 'W1', value: 112 },
-  { label: 'W2', value: 380 },
-  { label: 'W3', value: 690 },
-  { label: 'W4', value: 1050 },
-  { label: 'W5', value: 1420 },
-  { label: 'W6', value: 1768 },
+export const caseProgression: { label: string; date: string; value: number }[] = [
+  { label: 'Jun 2', date: '2026-06-02', value: 104 },
+  { label: 'Jun 4', date: '2026-06-04', value: 340 },
+  { label: 'Jun 5', date: '2026-06-05', value: 728 },
+  { label: 'Jun 10', date: '2026-06-10', value: 1442 },
+  { label: 'Jun 11', date: '2026-06-11', value: 1768 },
 ];
+
+/**
+ * Verified operational facts about Operation Toofan, each from public reporting.
+ * - launchDate: statewide launch (Kerala Kaumudi / Times of India).
+ * - subdivisions: 84 police subdivisions, four special squads each (Times of India).
+ * - jurisdictionStates / jurisdictionUTs: 5 states + 2 UTs (Times of India).
+ * - foreignArrests: 2 alleged foreign kingpins held in Delhi & Bengaluru (The Hindu).
+ * - valueSeizedLakhFirst3Days: narcotics worth over Rs 60 lakh in first 3 days (The Hindu).
+ */
+export const operationFacts = {
+  launchDate: '2026-06-02',
+  subdivisions: 84,
+  squadsPerSubdivision: 4,
+  jurisdictionStates: 5,
+  jurisdictionUTs: 2,
+  foreignArrests: 2,
+  valueSeizedLakhFirst3Days: 60,
+} as const;
+
+/** Whole days elapsed since the statewide launch (always-true elapsed time). */
+export function daysSinceLaunch(now: Date = new Date()): number {
+  const launch = new Date(`${operationFacts.launchDate}T00:00:00+05:30`);
+  const ms = now.getTime() - launch.getTime();
+  return Math.max(1, Math.floor(ms / (1000 * 60 * 60 * 24)));
+}
 
 /**
  * The four official pillars of Operation Toofan.
